@@ -5,3 +5,5 @@ print(dis)
 minutes = [5, 6, 7, 8, 2, 1, 1, 2, 4]
 minutes_set = set(minutes)
 print(minutes_set)
+print(type(minutes_set))
+print(type(dis))
