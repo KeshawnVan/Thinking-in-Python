@@ -71,13 +71,13 @@ new_fishing()
 @metric
 def fast(x, y):
     time.sleep(0.0012)
-    return x + y;
+    return x + y
 
 
 @metric
 def slow(x, y, z):
     time.sleep(0.1234)
-    return x * y * z;
+    return x * y * z
 
 
 f = fast(11, 22)
