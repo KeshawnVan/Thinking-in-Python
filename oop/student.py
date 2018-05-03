@@ -37,3 +37,5 @@ nana.set_sex("girl")
 # warn
 nana.__sex = "error"
 print(nana.__sex)
+
+nana.set_sex('my girl')
