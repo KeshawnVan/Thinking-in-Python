@@ -10,7 +10,7 @@ from wxpy import *
 credentials = pika.PlainCredentials("guest", "guest")
 
 # 连接参数
-conn_params = pika.ConnectionParameters("58.87.84.167", credentials=credentials, heartbeat_interval=0)
+conn_params = pika.ConnectionParameters("172.21.0.13", credentials=credentials, heartbeat_interval=0)
 
 # 创建连接
 conn_broker = pika.BlockingConnection(conn_params)
@@ -34,7 +34,6 @@ bot = Bot(console_qr=True, cache_path=True)
 # 创建consumer
 def message_consumer(channel, method, header, body):
     try:
-        channel.basic_ack(delivery_tag=method.delivery_tag)
         message_json = str(body, 'utf-8')
         message_dto = json.loads(message_json)
         receiver = message_dto['receiver']
@@ -42,6 +41,7 @@ def message_consumer(channel, method, header, body):
         print('wechat send message : [%s] to [%s]' % (content, receiver))
         my_friend = bot.groups().search(message_dto['receiver'])[0]
         my_friend.send(message_dto['content'])
+        channel.basic_ack(delivery_tag=method.delivery_tag)
     except Exception as e:
         print(e)
     return
