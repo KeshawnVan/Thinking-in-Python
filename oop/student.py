@@ -33,6 +33,8 @@ nana.print_score()
 print(nana.get_sex())
 nana.set_sex("girl")
 
+nana.name = 'change'
+print(nana.name)
 
 # warn
 nana.__sex = "error"
