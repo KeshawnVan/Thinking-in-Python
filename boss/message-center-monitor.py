@@ -25,7 +25,7 @@ HOST = 'starboss.csxbifqn7nwb.eu-west-1.rds.amazonaws.com'
 PORT = '1521'
 SID = 'STARBOSS'
 USER = 'boss_query'
-PASSWORD = ''
+PASSWORD = '!@#'
 
 COUNT_SQL = 'select count(id) from BOSS_MESSAGE_CENTER.SEND_MESSAGE where deal_status = 2 and failure_count = 5 and status = 1'
 DETAIL_SQL = 'select id,company_id,create_instant from BOSS_MESSAGE_CENTER.SEND_MESSAGE where deal_status = 2 and failure_count = 5 and status = 1'

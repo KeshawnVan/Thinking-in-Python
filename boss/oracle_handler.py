@@ -7,7 +7,7 @@ HOST = 'starboss.csxbifqn7nwb.eu-west-1.rds.amazonaws.com'
 PORT = '1521'
 SID = 'STARBOSS'
 USER = 'boss_query'
-PASSWORD = '%%^'
+PASSWORD = '%876%^'
 
 dsn = cx_Oracle.makedsn(HOST, PORT, SID)
 dsn_tns = dsn.replace('SID', 'SERVICE_NAME')

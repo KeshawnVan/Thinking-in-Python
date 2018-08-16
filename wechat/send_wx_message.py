@@ -17,11 +17,10 @@ class Config(object):
         self.token = token
 
 
-CORP_ID = ""
+CORP_ID = "wxb1e3f45d500d27dd"
 
 AGENT_ID = 1000025
 
-SECRET = ""
 
 APPLICATION_JSON = 'application/json'
 
@@ -55,6 +54,7 @@ def send_message(content):
         "safe": 0
     }
     response = requests.post(url=post_url, data=json.dumps(message))
+    print(response)
     error_code = json.loads(response.text).get('errcode')
     if error_code == 40014 or error_code == 42001 or error_code == 42007 or error_code == 42009:
         new_token = get_token()
